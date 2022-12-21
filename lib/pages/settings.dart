@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:country_icons/country_icons.dart';
+//import 'package:country_icons/country_icons.dart';
 
 class ChangeLanguage extends StatefulWidget {
   const ChangeLanguage({super.key});
@@ -24,7 +24,9 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
               child: Text(
                 'Choose the Language',
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 28,
+                  color: Color.fromARGB(255, 44, 44, 44),
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
