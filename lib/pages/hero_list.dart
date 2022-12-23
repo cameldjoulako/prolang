@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:prolang/pages/settings.dart';
 import 'package:prolang/pages/widgets/hero_card.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class HeroList extends StatelessWidget {
+class HeroList extends StatefulWidget {
   final String title;
 
-  const HeroList({super.key, this.title = ''});
+  const HeroList({super.key, this.title = 'Heroes of computer science'});
 
   @override
+  State<HeroList> createState() => _HeroListState();
+}
+
+class _HeroListState extends State<HeroList> {
+  @override
   Widget build(BuildContext context) {
+    /* var translate = AppLocalizations.of(context);
+    print(translate.appTitle); */
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(widget.title),
         actions: [
           IconButton(
             icon: const Icon(Icons.language),
-            tooltip: 'Change Language',
+            tooltip: 'Choose language',
             onPressed: () {
               Navigator.push(
                 context,
