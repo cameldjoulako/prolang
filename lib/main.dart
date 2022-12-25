@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
     );
-    return /*MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       /*  onGenerateTitle: (context) {
         return AppLocalizations.of(context).appTitle;
@@ -42,7 +42,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const HeroList(title: 'Heroes of Computer Science'),
-    );*/
-        Text(AppLocalizations.of(context)!.helloWorld);
+    );
   }
 }
