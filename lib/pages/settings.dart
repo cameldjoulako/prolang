@@ -1,7 +1,7 @@
 // ignore_for_file: dead_code
 
 import 'package:flutter/material.dart';
-//import 'package:country_icons/country_icons.dart';
+//import 'package:country_icons/country_icons.dart';;
 
 class ChangeLanguage extends StatefulWidget {
   const ChangeLanguage({super.key});
@@ -23,7 +23,7 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
           const Padding(
             padding: EdgeInsets.only(top: 15, bottom: 8.0),
             child: Text(
-              'Choose the Language',
+              'Choose Language',
               style: TextStyle(
                 fontSize: 28,
                 color: Color.fromARGB(255, 44, 44, 44),

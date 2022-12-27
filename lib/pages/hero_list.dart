@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:prolang/pages/settings.dart';
 import 'package:prolang/pages/widgets/hero_card.dart';
+
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HeroList extends StatefulWidget {
   final String title;
 
-  const HeroList({super.key, this.title = 'Heroes of computer science'});
+  const HeroList({super.key, required this.title});
 
   @override
   State<HeroList> createState() => _HeroListState();
@@ -15,9 +16,6 @@ class HeroList extends StatefulWidget {
 class _HeroListState extends State<HeroList> {
   @override
   Widget build(BuildContext context) {
-    /* var translate = AppLocalizations.of(context);
-    print(translate.appTitle); */
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -41,6 +39,7 @@ class _HeroListState extends State<HeroList> {
             const Padding(
               padding: EdgeInsets.only(bottom: 8.0),
               child: Text('6 Hereos'),
+              //child: Text(AppLocalizations.of(context)!.heroNumber),
             ),
             Expanded(
               child: ListView(
