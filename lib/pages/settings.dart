@@ -1,7 +1,6 @@
 // ignore_for_file: dead_code
 
 import 'package:flutter/material.dart';
-//import 'package:country_icons/country_icons.dart';;
 
 class ChangeLanguage extends StatefulWidget {
   const ChangeLanguage({super.key});
@@ -11,6 +10,15 @@ class ChangeLanguage extends StatefulWidget {
 }
 
 class _ChangeLanguageState extends State<ChangeLanguage> {
+  Locale _selectedLocale = const Locale('fr');
+  //String _selectedLanguage = "fr";
+
+  void _selectLanguage(Locale locale) {
+    setState(() {
+      _selectedLocale = locale;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var selected = true;
@@ -36,7 +44,10 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
               children: [
                 Expanded(
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      _selectedLocale = const Locale('fr');
+                      _selectLanguage(_selectedLocale);
+                    },
                     child: Card(
                       shadowColor: selected ? Colors.teal : Colors.white,
                       child: Padding(
@@ -78,7 +89,10 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                 ),
                 Expanded(
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      _selectedLocale = const Locale('es');
+                      _selectLanguage(_selectedLocale);
+                    },
                     child: Card(
                       shadowColor: selected ? Colors.teal : Colors.white,
                       child: Padding(
@@ -120,7 +134,10 @@ class _ChangeLanguageState extends State<ChangeLanguage> {
                 ),
                 Expanded(
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      _selectedLocale = const Locale('en');
+                      _selectLanguage(_selectedLocale);
+                    },
                     child: Card(
                       shadowColor: selected ? Colors.teal : Colors.white,
                       child: Padding(

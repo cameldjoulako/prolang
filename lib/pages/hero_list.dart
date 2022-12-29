@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:prolang/pages/settings.dart';
 import 'package:prolang/pages/widgets/hero_card.dart';
 
@@ -16,13 +17,14 @@ class HeroList extends StatefulWidget {
 class _HeroListState extends State<HeroList> {
   @override
   Widget build(BuildContext context) {
+    Intl.defaultLocale = 'fr';
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
         actions: [
           IconButton(
             icon: const Icon(Icons.language),
-            tooltip: 'Choose language',
+            tooltip: AppLocalizations.of(context)!.chooseLang,
             onPressed: () {
               Navigator.push(
                 context,
@@ -36,52 +38,48 @@ class _HeroListState extends State<HeroList> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
-              child: Text('6 Hereos'),
-              //child: Text(AppLocalizations.of(context)!.heroNumber),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              //child: Text('6 Hereos'),
+              child: Text(AppLocalizations.of(context)!.heroNumber),
             ),
             Expanded(
               child: ListView(
-                children: const [
+                children: [
                   HeroCard(
                     name: 'Grace Hopper',
-                    born: '9 December 1906',
-                    bio: 'Devised theory of machine-independent programming '
-                        'languages.',
+                    born: AppLocalizations.of(context)!.bornHero1,
+                    bio: AppLocalizations.of(context)!.bioHero1,
                     imagePath: 'assets/images/grace_hopper.jpg',
                   ),
                   HeroCard(
                     name: 'Alan Turing',
-                    born: '23 June 1912',
-                    bio: 'Father of theoretical computer science & '
-                        'artificial intelligence.',
+                    born: AppLocalizations.of(context)!.bornHero2,
+                    bio: AppLocalizations.of(context)!.bioHero2,
                     imagePath: 'assets/images/alan_turing.jpg',
                   ),
                   HeroCard(
                     name: 'Barbara Liskov',
-                    born: '7 November 1939',
-                    bio: 'Turing Award winner; inventor of Liskov '
-                        'substitution principle.',
+                    born: AppLocalizations.of(context)!.bornHero3,
+                    bio: AppLocalizations.of(context)!.bioHero3,
                     imagePath: 'assets/images/barbara_liskov.jpg',
                   ),
                   HeroCard(
                     name: 'Steve Wozniak',
-                    born: '11 August 1950',
-                    bio: 'Designed & developed the Apple I & Apple II '
-                        'microcomputers.',
+                    born: AppLocalizations.of(context)!.bornHero4,
+                    bio: AppLocalizations.of(context)!.bioHero4,
                     imagePath: 'assets/images/steve_wozniak.jpg',
                   ),
                   HeroCard(
                     name: 'Tim Berners-Lee',
-                    born: '8 June 1955',
-                    bio: 'Inventor of the World Wide Web.',
+                    born: AppLocalizations.of(context)!.bornHero5,
+                    bio: AppLocalizations.of(context)!.bioHero5,
                     imagePath: 'assets/images/tim_berners_lee.jpg',
                   ),
                   HeroCard(
                     name: 'Bill Gates',
-                    born: '28 October 1955',
-                    bio: 'Co-founder of Microsoft Corporation; philanthropist.',
+                    born: AppLocalizations.of(context)!.bornHero6,
+                    bio: AppLocalizations.of(context)!.bioHero6,
                     imagePath: 'assets/images/bill_gates.jpg',
                   ),
                 ],
